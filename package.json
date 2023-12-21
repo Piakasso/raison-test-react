@@ -1,7 +1,7 @@
 {
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://localhost:5173/login/step-1",
+  "homepage": "https://piakasso.github.io/raison-test-react/",
   "type": "module",
   "scripts": {
     "dev": "vite & node server.js",
