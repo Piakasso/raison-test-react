@@ -10,7 +10,7 @@ export default function App() {
     <>
       <Header />
       <main className="relative flex flex-col p-4 h-full">
-        <Route path="/" component={LoginFirstPage} />
+        <Route path="/" exact component={LoginFirstPage} />
         <Route path="/login/step-2" component={SecondLoginPage} />
       </main>
     </>

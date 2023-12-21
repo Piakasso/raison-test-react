@@ -1,6 +1,7 @@
 {
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://vercel.com/piakassos-projects/raison-test-react",
   "type": "module",
   "scripts": {
     "dev": "vite & node server.js",
