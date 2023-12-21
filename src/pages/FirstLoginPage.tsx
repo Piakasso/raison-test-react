@@ -104,30 +104,28 @@ function LoginFirstPage() {
   }
 
   return (
-    <Switch>
-      <Route path="/">
-        <FormInput
-          email={email}
-          isValidEmail={isValidEmail}
-          handleCheckValue={handleCheckValue}
-          handleChangeEmail={handleChangeEmail}
-          handleResetValue={handleResetValue}
-        />
-        <div className="p-1"></div>
-        <FormCheckbox
-          handleToggleCheckbox={handleToggleCheckbox}
-          isChecked={isChecked}
-        />
-        <button
-          className="btn btn-primary mt-auto"
-          disabled={isValidEmail === "email is ok" && isChecked ? false : true}
-          onMouseDown={handleOnMouseDown}
-          onMouseUp={handleOnMouseUp}
-        >
-          Hold to proceed {timer === 0 ? "" : `${timer} ms`}
-        </button>
-      </Route>
-    </Switch>
+    <div>
+      <FormInput
+        email={email}
+        isValidEmail={isValidEmail}
+        handleCheckValue={handleCheckValue}
+        handleChangeEmail={handleChangeEmail}
+        handleResetValue={handleResetValue}
+      />
+      <div className="p-1"></div>
+      <FormCheckbox
+        handleToggleCheckbox={handleToggleCheckbox}
+        isChecked={isChecked}
+      />
+      <button
+        className="btn btn-primary mt-auto"
+        disabled={isValidEmail === "email is ok" && isChecked ? false : true}
+        onMouseDown={handleOnMouseDown}
+        onMouseUp={handleOnMouseUp}
+      >
+        Hold to proceed {timer === 0 ? "" : `${timer} ms`}
+      </button>
+    </div>
   );
 }
 

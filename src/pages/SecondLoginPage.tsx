@@ -51,38 +51,34 @@ const SecondLoginPage = () => {
   };
 
   return (
-    <Switch>
-      <Route path="/login/step-2">
-        <div className="flex flex-col h-full">
-          <div className="flex flex-col gap-2 flex-grow">
-            <span>Email</span>
-            <span className="py-3 px-3 bg-[#1d232a]">{email}</span>
-          </div>
+    <div>
+      <div className="flex flex-col h-full">
+        <div className="flex flex-col gap-2 flex-grow">
+          <span>Email</span>
+          <span className="py-3 px-3 bg-[#1d232a]">{email}</span>
         </div>
-        <div className="flex gap-3">
-          <Button classes="flex-1 px-3" handleButtonClick={handleBackClick}>
-            Back
-          </Button>
-          <Button
-            handleButtonClick={handleConfirmClick}
-            classes="flex-1 px-3 btn-primary"
+      </div>
+      <div className="flex gap-3">
+        <Button classes="flex-1 px-3" handleButtonClick={handleBackClick}>
+          Back
+        </Button>
+        <Button
+          handleButtonClick={handleConfirmClick}
+          classes="flex-1 px-3 btn-primary"
+        >
+          Confirm
+        </Button>
+      </div>
+      {status !== "idle" && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] flex items-center justify-center bg-[rgba(0,0,0,0.8)]">
+          <h3
+            className={status === "success" ? "text-green-500" : "text-red-500"}
           >
-            Confirm
-          </Button>
+            {status.toUpperCase()}
+          </h3>
         </div>
-        {status !== "idle" && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] flex items-center justify-center bg-[rgba(0,0,0,0.8)]">
-            <h3
-              className={
-                status === "success" ? "text-green-500" : "text-red-500"
-              }
-            >
-              {status.toUpperCase()}
-            </h3>
-          </div>
-        )}
-      </Route>
-    </Switch>
+      )}
+    </div>
   );
 };
 
