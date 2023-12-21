@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Route, Switch, useHistory } from "react-router";
+import { useHistory } from "react-router";
 
 import FormInput from "../components/FormInput";
 import FormCheckbox from "../components/FormCheckbox";
@@ -120,8 +120,8 @@ function LoginFirstPage() {
       <button
         className="btn btn-primary mt-auto"
         disabled={isValidEmail === "email is ok" && isChecked ? false : true}
-        onMouseDown={handleOnMouseDown}
-        onMouseUp={handleOnMouseUp}
+        onTouchStart={handleOnMouseDown}
+        onTouchEnd={handleOnMouseUp}
       >
         Hold to proceed {timer === 0 ? "" : `${timer} ms`}
       </button>

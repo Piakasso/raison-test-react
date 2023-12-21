@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Switch, useHistory } from "react-router";
+import { useHistory } from "react-router";
 import Button from "../components/Button";
 
 const SecondLoginPage = () => {
@@ -17,15 +17,23 @@ const SecondLoginPage = () => {
     const handleKeydown = (event: KeyboardEvent): void => {
       if (
         (event.key === "Escape" && status !== "idle") ||
-        (event.keyCode === 27 && status !== "idle")
+        (event.key === "Backspace" && status !== "idle")
       ) {
         setStatus("idle");
         event.preventDefault();
       }
     };
 
-    document.addEventListener("keydown", handleKeydown);
-    return () => document.removeEventListener("keydown", handleKeydown);
+    window.addEventListener("popstate", () => {
+      setStatus("idle");
+    });
+    window.addEventListener("keydown", handleKeydown);
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+      window.removeEventListener("popstate", () => {
+        setStatus("idle");
+      });
+    };
   }, [status]);
 
   const handleBackClick = () => {
