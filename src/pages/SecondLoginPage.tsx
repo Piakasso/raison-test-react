@@ -51,7 +51,7 @@ const SecondLoginPage = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="flex flex-col h-full">
         <div className="flex flex-col gap-2 flex-grow">
           <span>Email</span>
@@ -78,7 +78,7 @@ const SecondLoginPage = () => {
           </h3>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -104,7 +104,7 @@ function LoginFirstPage() {
   }
 
   return (
-    <div>
+    <>
       <FormInput
         email={email}
         isValidEmail={isValidEmail}
@@ -125,7 +125,7 @@ function LoginFirstPage() {
       >
         Hold to proceed {timer === 0 ? "" : `${timer} ms`}
       </button>
-    </div>
+    </>
   );
 }
 
